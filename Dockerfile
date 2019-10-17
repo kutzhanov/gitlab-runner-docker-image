@@ -15,9 +15,8 @@ RUN gitlab-runner register \
       --docker-image "docker:latest" \
       --docker-volumes /var/run/docker.sock:/var/run/docker.sock
 
-VOLUME [ "/var/run/docker.sock" ]
+#VOLUME [ "/var/run/docker.sock" ]
+
 VOLUME [/etc/gitlab-runner /home/gitlab-runner]
-
 ENTRYPOINT ["/usr/bin/dumb-init" "/entrypoint"]
-
 CMD ["run" "--user=gitlab-runner" "--working-directory=/home/gitlab-runner"]
