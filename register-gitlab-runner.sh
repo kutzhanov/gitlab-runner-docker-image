@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 gitlab-runner register \
       --url $GITLAB_URL --registration-token $REGISTRATION_TOKEN \
       --executor docker --description "My Runner" \
